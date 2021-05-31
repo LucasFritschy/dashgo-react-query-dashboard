@@ -1,5 +1,5 @@
 import {
-  Box,
+  Flex,
   Drawer,
   DrawerCloseButton,
   DrawerHeader,
@@ -36,8 +36,8 @@ export function Sidebar(): JSX.Element {
   }
 
   return (
-    <Box as="aside" w="64" mr="8">
+    <Flex as="aside" w="64" mr="8" alignSelf="flex-start">
       <SizebarNav />
-    </Box>
+    </Flex>
   )
 }
