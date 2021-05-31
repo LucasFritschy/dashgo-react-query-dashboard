@@ -20,12 +20,19 @@ import Link from 'next/link'
 import { Header } from '../../components/Header'
 import { Pagination } from '../../components/Pagination'
 import { Sidebar } from '../../components/Sidebar'
+import { useEffect } from 'react'
 
 export default function UserList() {
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
   })
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api/users').then((response) =>
+      response.json().then((data) => console.log(data))
+    )
+  }, [])
 
   return (
     <Box>
@@ -38,7 +45,7 @@ export default function UserList() {
             <Heading size="lg" fontWeight="normal">
               Usuários
             </Heading>
-            <Link href="users/create" passHref>
+            <Link href="/users/create" passHref>
               <Button
                 as="a"
                 size="sm"
@@ -69,7 +76,7 @@ export default function UserList() {
                 </Td>
                 <Td>
                   <Box>
-                    <Text fontWeigth="bold">Lucas Fritschy</Text>
+                    <Text fontWeight="bold">Lucas Fritschy</Text>
                     <Text fontSize="small" color="gray.300">
                       lucasfritschy@gmail.com
                     </Text>
@@ -83,7 +90,7 @@ export default function UserList() {
                 </Td>
                 <Td>
                   <Box>
-                    <Text fontWeigth="bold">Lucas Fritschy</Text>
+                    <Text fontWeight="bold">Lucas Fritschy</Text>
                     <Text fontSize="small">lucasfritschy@gmail.com</Text>
                   </Box>
                 </Td>
@@ -95,7 +102,7 @@ export default function UserList() {
                 </Td>
                 <Td>
                   <Box>
-                    <Text fontWeigth="bold">Lucas Fritschy</Text>
+                    <Text fontWeight="bold">Lucas Fritschy</Text>
                     <Text fontSize="small">lucasfritschy@gmail.com</Text>
                   </Box>
                 </Td>
