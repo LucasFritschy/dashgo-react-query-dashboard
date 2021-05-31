@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'development') {
   makeServer()
 }
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ChakraProvider theme={theme}>
       <SidebarDrawerProvider>

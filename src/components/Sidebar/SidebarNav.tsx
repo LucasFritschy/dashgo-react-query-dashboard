@@ -3,7 +3,7 @@ import { RiContactsLine, RiDashboardLine, RiGitMergeLine, RiInputMethodLine } fr
 import { NavLink } from './NavLink'
 import { NavSection } from './NavSection'
 
-export function SizebarNav() {
+export function SizebarNav(): JSX.Element {
   return (
     <Stack spacing="12" align="flex-start">
       <NavSection title="GERAL">

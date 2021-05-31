@@ -1,4 +1,4 @@
-import { createServer, Model } from 'miragejs'
+import { createServer, Model, Server } from 'miragejs'
 
 type User = {
   name: string
@@ -6,10 +6,10 @@ type User = {
   created_at: string
 }
 
-export function makeServer() {
+export function makeServer(): Server {
   const server = createServer({
     models: {
-      user: Model.extend<Partial<User>>({})
+      user: Model.extend<Partial<User>>({}),
     },
     routes() {
       this.namespace = 'api'
@@ -20,7 +20,7 @@ export function makeServer() {
 
       this.namespace = ''
       this.passthrough()
-    }
+    },
   })
 
   return server

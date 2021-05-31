@@ -6,32 +6,28 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { Input } from '../components/Form/Input'
 
 type SignInFormData = {
-  email: string,
+  email: string
   password: string
 }
 
 const signInFormSchema = yup.object().shape({
   email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
-  password: yup.string().required('Senha obrigatória')
+  password: yup.string().required('Senha obrigatória'),
 })
 
 export default function SignIn() {
   const { register, handleSubmit, formState } = useForm({
-    resolver: yupResolver(signInFormSchema)
+    resolver: yupResolver(signInFormSchema),
   })
 
   const handleSignIn: SubmitHandler<SignInFormData> = async (data) => {
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise((resolve) => setTimeout(resolve, 2000))
 
     console.log(data)
   }
 
   return (
-    <Flex
-      w="100vw"
-      h="100vh"
-      align="center"
-      justify="center">
+    <Flex w="100vw" h="100vh" align="center" justify="center">
       <Flex
         as="form"
         width="100%"
@@ -47,14 +43,14 @@ export default function SignIn() {
             name="email"
             label="E-mail"
             type="email"
-            {...register("email")}
+            {...register('email')}
             error={formState.errors.email}
           />
           <Input
             name="password"
             label="Senha"
             type="password"
-            {...register("password")}
+            {...register('password')}
             error={formState.errors.password}
           />
         </Stack>
@@ -63,7 +59,9 @@ export default function SignIn() {
           mt="6"
           colorScheme="pink"
           isLoading={formState.isSubmitting}
-        >Entrar</Button>
+        >
+          Entrar
+        </Button>
       </Flex>
     </Flex>
   )

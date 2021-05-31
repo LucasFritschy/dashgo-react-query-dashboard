@@ -1,8 +1,17 @@
-import { Box, Drawer, DrawerCloseButton, DrawerHeader, DrawerContent, DrawerOverlay, useBreakpointValue, DrawerBody } from '@chakra-ui/react'
+import {
+  Box,
+  Drawer,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerContent,
+  DrawerOverlay,
+  useBreakpointValue,
+  DrawerBody,
+} from '@chakra-ui/react'
 import { useSidebarDrawer } from '../../contexts/SibebarDrawerContext'
 import { SizebarNav } from './SidebarNav'
 
-export function Sidebar() {
+export function Sidebar(): JSX.Element {
   const isDrawerSidebar = useBreakpointValue({
     base: true,
     lg: false,

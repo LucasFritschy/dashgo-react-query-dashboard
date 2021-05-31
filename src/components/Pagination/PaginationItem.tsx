@@ -5,7 +5,7 @@ interface PaginationItemProps {
   number: number
 }
 
-export function PaginationItem({ isCurrent = false, number }: PaginationItemProps) {
+export function PaginationItem({ isCurrent = false, number }: PaginationItemProps): JSX.Element {
   if (isCurrent) {
     return (
       <Button
@@ -16,11 +16,11 @@ export function PaginationItem({ isCurrent = false, number }: PaginationItemProp
         disabled
         _disabled={{
           bgColor: 'pink.500',
-          cursor: 'default'
+          cursor: 'default',
         }}
       >
         {number}
-      </Button >
+      </Button>
     )
   } else {
     return (
@@ -30,7 +30,7 @@ export function PaginationItem({ isCurrent = false, number }: PaginationItemProp
         width="4"
         bgColor="gray.700"
         _hover={{
-          bg: "gray.500"
+          bg: 'gray.500',
         }}
       >
         {number}
