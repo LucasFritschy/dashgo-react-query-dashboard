@@ -36,7 +36,7 @@ export default function UserList() {
     lg: true,
   })
 
-  async function handlePrefetchUser(userId) {
+  async function handlePrefetchUser(userId: string) {
     await queryClient.prefetchInfiniteQuery(
       ['user', userId],
       async () => {
